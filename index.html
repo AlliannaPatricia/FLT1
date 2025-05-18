@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLT1 - Database Normalization</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="sakura-falling"></canvas>
+  <div class="sakura-animation"></div>
+  <main class="container">
+    <h1>Finals Lab Task 1 - Database Normalization</h1>
+    <p>This page contains my lab task on normalizing database tables to reduce redundancy and improve data integrity.</p>
+
+    <section>
+      <h2>Normalization Process</h2>
+      <ul>
+        <li>Identified repeating groups and removed them</li>
+        <li>Created separate tables for related data</li>
+        <li>Defined primary and foreign keys</li>
+        <li>Ensured data dependencies are on keys</li>
+        <li>Achieved 1st, 2nd, and 3rd Normal Forms</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <ul>
+        <li>Reduced data redundancy</li>
+        <li>Improved data consistency</li>
+        <li>Optimized database structure</li>
+      </ul>
+    </section>
+
+    <section class="screenshots">
+      <h2>Unnormalized Table</h2>
+      <img src="images/flt1_unnormalized.png" alt="Unnormalized Table screenshot" />
+
+      <h2>Normalized Tables</h2>
+      <img src="images/flt1_normalized.png" alt="Normalized Tables screenshot" />
+    </section>
+  </main>
+
+  <!-- Sakura Falling Animation Script -->
+  <script src="https://cdn.jsdelivr.net/gh/lgarron/sakura/sakura.js"></script>
+  <script>
+    const sakura = new Sakura('body', {
+      colors: [
+        {
+          gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+          gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+          gradientColorDegree: 120
+        }
+      ],
+      maxSize: 14,
+      minSize: 9,
+      fallSpeed: 1.2
+    });
+  </script>
+
+  <!-- Sakura Trail Animation -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const trail = document.createElement("div");
+      trail.className = "sakura-trail";
+      document.body.appendChild(trail);
+
+      document.addEventListener("mousemove", function(e) {
+        const petal = document.createElement("div");
+        petal.className = "sakura-petal";
+        petal.style.left = `${e.pageX}px`;
+        petal.style.top = `${e.pageY}px`;
+        document.body.appendChild(petal);
+
+        setTimeout(() => petal.remove(), 1000);
+      });
+    });
+  </script>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c73b93344.mp3?filename=serene-view-14757.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
