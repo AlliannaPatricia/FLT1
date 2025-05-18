@@ -3,42 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FLT1 - Database Normalization</title>
+  <title>FLT1 - MySQL Basics (Multi-Level Company)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <canvas id="sakura-falling"></canvas>
   <div class="sakura-animation"></div>
   <main class="container">
-    <h1>Finals Lab Task 1 - Database Normalization</h1>
-    <p>This page contains my lab task on normalizing database tables to reduce redundancy and improve data integrity.</p>
+    <h1>Finals Lab Task 1 - MySQL Basics (Multi-Level Company)</h1>
+    <p>This lab activity focuses on building a database for a company with multiple levels using MySQL. I created tables, inserted data, and executed SQL queries to retrieve required information.</p>
 
     <section>
-      <h2>Normalization Process</h2>
+      <h2>Steps I Followed</h2>
       <ul>
-        <li>Identified repeating groups and removed them</li>
-        <li>Created separate tables for related data</li>
-        <li>Defined primary and foreign keys</li>
-        <li>Ensured data dependencies are on keys</li>
-        <li>Achieved 1st, 2nd, and 3rd Normal Forms</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Results</h2>
-      <ul>
-        <li>Reduced data redundancy</li>
-        <li>Improved data consistency</li>
-        <li>Optimized database structure</li>
+        <li><strong>Created a new database:</strong>
+          <ul>
+            <li>Used <code>CREATE DATABASE</code> to make the database</li>
+            <li>Used <code>USE</code> to select the database</li>
+          </ul>
+        </li>
+        <li><strong>Created tables:</strong>
+          <ul>
+            <li>Used <code>CREATE TABLE</code> for Employees, Departments, etc.</li>
+            <li>Assigned correct data types (e.g., INT, VARCHAR, DATE)</li>
+            <li>Set <code>PRIMARY KEY</code> and <code>FOREIGN KEY</code> for relationships</li>
+          </ul>
+        </li>
+        <li><strong>Checked table structures:</strong>
+          <ul>
+            <li>Used <code>DESCRIBE</code> or phpMyAdmin to review the design</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
     <section class="screenshots">
-      <h2>Unnormalized Table</h2>
-      <img src="images/flt1_unnormalized.png" alt="Unnormalized Table screenshot" />
+      <h2>Here's the screenshot of my output for the Employees table (See screenshot)</h2>
+      <img src="images/employees.png" alt="Employees Table Screenshot" />
 
-      <h2>Normalized Tables</h2>
-      <img src="images/flt1_normalized.png" alt="Normalized Tables screenshot" />
+      <h2>Here's the screenshot of my output for the Departments table (See screenshot)</h2>
+      <img src="images/departments.png" alt="Departments Table Screenshot" />
+
+      <h2>Here's the screenshot of my output for the Employee Departments table (See screenshot)</h2>
+      <img src="images/employee_departments.png" alt="Employee Departments Screenshot" />
+
+      <h2>Here's the screenshot of my output for the Employee Projects table (See screenshot)</h2>
+      <img src="images/employee_projects.png" alt="Employee Projects Screenshot" />
+
+      <h2>Here's the screenshot of my output for the Managers table (See screenshot)</h2>
+      <img src="images/Managers.png" alt="Managers Table Screenshot" />
     </section>
   </main>
 
@@ -72,7 +85,6 @@
         petal.style.left = `${e.pageX}px`;
         petal.style.top = `${e.pageY}px`;
         document.body.appendChild(petal);
-
         setTimeout(() => petal.remove(), 1000);
       });
     });
